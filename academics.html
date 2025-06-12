@@ -1,0 +1,106 @@
+<!-- FILE: academics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics Feedback</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #F8F9FA;
+        }
+        h1 {
+            color: #2C3E50;
+            font-size: 50px;
+            margin-top: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #6D9DC5, #2C3E50);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideIn 2.5s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            color: #5D6D7E;
+            font-size: 24px;
+            font-style: italic;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .option {
+            display: inline-block;
+            width: 250px;
+            padding: 20px;
+            margin: 20px;
+            background: #D6EAF8;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .option:hover {
+            transform: translateY(-5px);
+        }
+        .option img {
+            width: 100px;
+            height: auto;
+        }
+        .option h2 {
+            color: #1B4F72;
+            margin-top: 10px;
+        }
+        .qr-code-container {
+            margin-top: 50px;
+            padding: 20px;
+            background: #D6EAF8;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .qr-code-container img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Academics Feedback</h1>
+    <h2>Report Academic Issues</h2>
+    <p>Select one of the options below to either scan the QR code or fill the complaint form.</p>
+
+    <div class="container">
+        <div class="option" onclick="showQR()">
+            <img src="academics_url_qr.png" alt="QR Code">
+            <h2>Scan QR Code</h2>
+        </div>
+        <a href="academics_form.html" class="option">
+            <img src="form_icon.png" alt="Fill Form">
+            <h2>Fill Complaint Form</h2>
+        </a>
+    </div>
+
+    <div class="qr-code-container" id="qr-code-container" style="display: none;">
+        <h3>Scan QR Code for Academics Feedback</h3>
+        <img src="academics_url_qr.png" alt="Academics QR Code">
+    </div>
+
+    <script>
+        function showQR() {
+            document.getElementById("qr-code-container").style.display = "block";
+        }
+    </script>
+</body>
+</html>

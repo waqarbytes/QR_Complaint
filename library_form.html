@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Complaint Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #F8F9FA;
+        }
+        h1 {
+            color: #2C3E50;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #D6EAF8;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #1B4F72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #154360;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Complaint Form</h1>
+    <div class="form-container">
+        <form action="submit_complaint.php" method="POST">
+            <label for="location">Library Location:</label>
+            <select id="location" name="location">
+                <option value="Main Library">Main Library</option>
+                <option value="Engineering Library">Engineering Library</option>
+            </select>
+
+            <label for="issue">Issue Type:</label>
+            <select id="issue" name="issue">
+                <option value="books">Books Availability</option>
+                <option value="seating">Seating Issue</option>
+                <option value="internet">Internet Access</option>
+                <option value="noise">Noise Disturbance</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="description">Problem Description:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Describe your issue..."></textarea>
+            <input type="hidden" name="form_type" value="library">
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+</body>
+</html>

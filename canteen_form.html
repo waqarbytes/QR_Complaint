@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteen Complaint Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #F8F9FA;
+        }
+        h1 {
+            color: #2C3E50;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        select, textarea, input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #1B4F72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #154360;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canteen Complaint Form</h1>
+    <div class="form-container">
+        <form action="submit_complaint.php" method="post">
+        
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="main_canteen">Main Canteen</option>
+                <option value="block_canteen">Block Canteen</option>
+            </select>
+            
+            <label for="issue">Issue Type :</label>
+            <select id="issue" name="issue">
+                <option value="food_quality">Food Quality</option>
+                <option value="hygiene">Hygiene</option>
+                <option value="service">Service</option>
+                <option value="pricing">Pricing</option>
+            </select>
+            
+            <label for="description">Description of the Problem:</label>
+            <textarea id="description" name="description" rows="4"></textarea>
+
+            <input type="hidden" name="form_type" value="canteen">
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+</body>
+</html>

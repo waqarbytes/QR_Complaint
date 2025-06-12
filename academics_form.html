@@ -1,0 +1,109 @@
+<!-- FILE: academics_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics Complaint Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #F8F9FA;
+        }
+        h1 {
+            color: #2C3E50;
+            font-size: 40px;
+            margin-top: 40px;
+            font-weight: bold;
+        }
+        .form-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #D6EAF8;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container select,
+        .form-container input[type="text"],
+        .form-container textarea {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #1B4F72;
+            background-color: #EAF2F8;
+            width: 100%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .form-container textarea {
+            height: 50px;
+            resize: vertical;
+        }
+
+        .form-container button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #5DADE2;
+            color: white;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #3498DB;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2C3E50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Academics Complaint Form</h1>
+
+    <div class="form-container">
+        <form action="submit_complaint.php" method="post">
+            <label for="location">Select Department:</label>
+            <select id="location" name="location" required>
+                <option value="" disabled selected>Select</option>
+                <option value="cs">Computer Science</option>
+                <option value="it">Information Technology</option>
+                <option value="ee">Electrical Engineering</option>
+                <option value="me">Mechanical Engineering</option>
+                <option value="ce">Civil Engineering</option>
+            </select>
+
+            <label for="issue">Issue Type:</label>
+            <select id="issue" name="issue" required>
+                <option value="" disabled selected>Select</option>
+                <option value="faculty">Faculty Issue</option>
+                <option value="course">Course Issue</option>
+                <option value="resources">Resources Issue</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Describe the issue in detail" required></textarea>
+
+            <input type="hidden" name="form_type" value="academics">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <a class="back-link" href="academics_form.html">&larr; Back to Options</a>
+    </div>
+</body>
+</html>
